@@ -17,9 +17,9 @@ class GenerateLaserTask extends BukkitRunnable {
             return;
         }
         
-        for (double x = -2; x < laser.length + 2; x += laser.gap) {
+        for (double z = -2; z < laser.length + 2; z += laser.gap) {
             laser.origin.getWorld().spawnParticle(Particle.REDSTONE,
-                    laser.origin.getX() + x, laser.origin.getY(), laser.origin.getZ(),
+                    laser.origin.getX(), laser.origin.getY(), laser.origin.getZ() + z,
                     1, 0, 0, 0, 0, new Particle.DustOptions(Color.RED, laser.size));
         }
     }

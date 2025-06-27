@@ -22,8 +22,8 @@ class DetectHitPlayerTask extends BukkitRunnable {
                 .filter(p -> !(p.getGameMode().equals(GameMode.SPECTATOR)))
                 .filter(p -> !p.isDead())
                 .forEach(p -> {
-                    double z = p.getLocation().getZ();
-                    if (z < laser.origin.getZ()) {
+                    double x = p.getLocation().getX();
+                    if (x < laser.origin.getX()) {
                         p.setHealth(0.0);
                     }
                 });
